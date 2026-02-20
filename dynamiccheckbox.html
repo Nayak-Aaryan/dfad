@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Dynamic Checkbox</title>
+    <title>Dynamic Option</title>
 </head>
 <body>
 
-    <h3>Add Dynamic Checkbox Options</h3>
+<h2>Add Dynamic Checkbox</h2>
 
-    Enter Option Name:
-    <input type="text" id="optionText">
-    <button onclick="addOption()">Add</button>
+Enter Option:
+<input type="text" id="text">
+<button onclick="addOption()">Add</button>
 
-    <div id="options"></div>
+<div id="box"></div>
 
-    <script>
+<script>
 
-        function addOption() {
+function addOption() {
 
-            let text = document.getElementById("optionText").value;
+    let value = document.getElementById("text").value;
 
-            if (text === "") {
-                alert("Please enter text");
-                return;
-            }
+    if (value == "") {
+        alert("Enter option");
+        return;
+    }
 
-            let div = document.getElementById("options");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
 
-            div.innerHTML += 
-                "<input type='checkbox' value='" + text + "'> " 
-                + text + "<br>";
+    let label = document.createElement("label");
+    label.innerText = value;
 
-            document.getElementById("optionText").value = "";
+    let br = document.createElement("br");
 
-        }
+    let box = document.getElementById("box");
+    box.appendChild(checkbox);
+    box.appendChild(label);
+    box.appendChild(br);
 
-    </script>
+    document.getElementById("text").value = "";
+}
+
+</script>
 
 </body>
 </html>
