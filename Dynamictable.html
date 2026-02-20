@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Table</title>
+</head>
+<body>
+
+<h2>Dynamic Table</h2>
+
+Rows: <input type="number" id="r"><br><br>
+Cols: <input type="number" id="c"><br><br>
+
+<button onclick="makeTable()">Generate</button>
+
+<br><br>
+<div id="result"></div>
+
+<script>
+function makeTable() {
+
+    var r = document.getElementById("r").value;
+    var c = document.getElementById("c").value;
+
+    var output = "<table border='1'>";
+
+    for (var i = 0; i < r; i++) {
+        output += "<tr>";
+
+        for (var j = 0; j < c; j++) {
+            output += "<td>Cell</td>";
+        }
+
+        output += "</tr>";
+    }
+
+    output += "</table>";
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
