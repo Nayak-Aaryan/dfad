@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/nature1.jpg" class="img">
+    <img src="images/nature2.jpg" class="img">
+    <img src="images/nature3.jpg" class="img">
+    <script>
+        let imageA = document.querySelectorAll(".img");
+        
+        for(let i = 0; i < imageA.length; i++) {
+            imageA[i].addEventListener('mouseover', function () {
+                imageA[i].style.width = "200px";
+            });
+
+            imageA[i].addEventListener('mouseout', function () {
+                imageA[i].style.width = "150px";
+            });
+        }
+         
+    </script>
+</body>
+</html>
